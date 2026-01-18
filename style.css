@@ -187,3 +187,29 @@ body {
 .mini-icon:hover {
     filter: none;
 }
+
+
+/* STYLE PAGE SOINS */
+.soins-hero {
+    text-align: center;
+    padding: 60px 10%;
+    background-color: #f4fcf4; /* Vert très pâle pour le côté naturel */
+}
+
+.soins-intro {
+    padding: 50px 10%;
+    text-align: center;
+}
+
+.intro-box {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.intro-box h2 {
+    margin-bottom: 20px;
+}
