@@ -103,3 +103,46 @@ body {
     .hero-form-card { width: 100%; box-sizing: border-box; }
     .nav-links { display: none; } /* On pourra ajouter un menu mobile plus tard */
 }
+
+
+/* CENTRAGE ET LISIBILITÉ DES ARTICLES */
+.article-layout {
+    display: flex;
+    justify-content: center; /* Centre le bloc horizontalement */
+    padding: 60px 20px;
+    background: white;
+}
+
+.article-body {
+    max-width: 700px; /* Largeur optimale pour lire sans fatiguer l'oeil */
+    width: 100%;
+    text-align: left; /* Le texte reste à gauche pour la lecture, mais le bloc est au milieu */
+}
+
+.article-body h2, .article-body h3 {
+    color: var(--orange-dark);
+    margin-top: 35px;
+}
+
+.article-body p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+}
+
+.info-highlight {
+    background: #fff5f0;
+    border-left: 5px solid var(--orange-saumon);
+    padding: 20px;
+    margin: 30px 0;
+    border-radius: 0 10px 10px 0;
+}
+
+.article-body ul {
+    margin-bottom: 30px;
+}
+
+.article-body li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
