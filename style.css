@@ -2,69 +2,79 @@
     --orange-saumon: #FF8C69;
     --orange-dark: #F37021;
     --text-dark: #2c3e50;
-    --bg-light: #f9f9f9;
     --white: #ffffff;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
+    padding: 0;
     color: var(--text-dark);
     background-color: var(--white);
     line-height: 1.6;
 }
 
-/* NAVIGATION */
+/* NAVBAR UNIQUE ET PRO */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 10%;
+    padding: 10px 5%;
     background: var(--white);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-.site-logo { height: 80px; width: auto; }
+.logo-container img {
+    height: 70px;
+    width: auto;
+}
 
-.nav-links { display: flex; gap: 30px; list-style: none; margin: 0; padding: 0; }
-.nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 600; text-transform: uppercase; font-size: 0.85rem; }
-.nav-links a:hover { color: var(--orange-dark); }
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+}
 
-/* SECTIONS HERO (FOND SAUMON) */
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+/* STRUCTURE DES PAGES */
 .hero-section {
     background: var(--orange-saumon);
-    padding: 80px 10%;
+    padding: 60px 10%;
     display: flex;
     align-items: center;
-    gap: 50px;
+    justify-content: space-between;
+    gap: 40px;
     color: var(--white);
 }
 
-.hero-text { flex: 1; text-align: left; }
-.hero-text h1 { font-size: 3rem; line-height: 1.2; margin-bottom: 20px; color: var(--white); }
-.hero-text p { font-size: 1.2rem; margin-bottom: 30px; }
+.hero-text { flex: 1; }
+.hero-text h1 { font-size: 3rem; margin-bottom: 20px; color: var(--white); }
 
-/* CARTES BLANCHES */
 .hero-form-card {
     background: var(--white);
-    padding: 35px;
+    padding: 30px;
     border-radius: 15px;
-    color: var(--text-dark);
     width: 350px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    color: var(--text-dark);
 }
 
-.hero-form-card h2, .hero-form-card h3, .hero-form-card p { color: var(--text-dark) !important; }
-
-/* GRILLE DE CONTENU */
-.section-white { padding: 80px 10%; text-align: center; background: var(--white); }
+.section-white {
+    padding: 60px 10%;
+    text-align: center;
+}
 
 .grid-3 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
     margin-top: 40px;
 }
@@ -72,77 +82,24 @@ body {
 .step-card {
     padding: 30px;
     border: 1px solid #eee;
-    border-radius: 12px;
-    background: var(--white);
-    text-align: left;
-    transition: 0.3s;
-    color: var(--text-dark);
+    border-radius: 10px;
 }
 
-.step-card h3 { color: var(--orange-dark); margin-top: 0; }
-
-/* BOUTONS */
 .btn-main {
     background: var(--orange-dark);
-    color: var(--white);
-    padding: 16px 30px;
-    border-radius: 8px;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
     display: inline-block;
     border: none;
-    text-align: center;
-    transition: 0.3s;
-}
-.btn-main:hover { background: var(--text-dark); transform: translateY(-2px); }
-
-/* MOBILE */
-@media (max-width: 768px) {
-    .hero-section { flex-direction: column; text-align: center; padding: 40px 5%; }
-    .hero-text { text-align: center; }
-    .hero-form-card { width: 100%; box-sizing: border-box; }
-    .nav-links { display: none; } /* On pourra ajouter un menu mobile plus tard */
 }
 
-
-/* CENTRAGE ET LISIBILITÉ DES ARTICLES */
+/* CENTRAGE ARTICLE */
 .article-layout {
-    display: flex;
-    justify-content: center; /* Centre le bloc horizontalement */
-    padding: 60px 20px;
-    background: white;
-}
-
-.article-body {
-    max-width: 700px; /* Largeur optimale pour lire sans fatiguer l'oeil */
-    width: 100%;
-    text-align: left; /* Le texte reste à gauche pour la lecture, mais le bloc est au milieu */
-}
-
-.article-body h2, .article-body h3 {
-    color: var(--orange-dark);
-    margin-top: 35px;
-}
-
-.article-body p {
-    font-size: 1.15rem;
-    line-height: 1.8;
-    color: var(--text-dark);
-}
-
-.info-highlight {
-    background: #fff5f0;
-    border-left: 5px solid var(--orange-saumon);
-    padding: 20px;
-    margin: 30px 0;
-    border-radius: 0 10px 10px 0;
-}
-
-.article-body ul {
-    margin-bottom: 30px;
-}
-
-.article-body li {
-    margin-bottom: 10px;
-    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 20px;
+    text-align: left;
 }
