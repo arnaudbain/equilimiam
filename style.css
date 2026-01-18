@@ -122,3 +122,43 @@ h1 {
     text-decoration: none;
     font-weight: 600;
 }
+
+
+/* STYLE PAGE ARTICLE DÉTAILLÉ */
+.post-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.post-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.post-body {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.post-body h2 {
+    margin-top: 40px;
+    color: var(--black-deep);
+}
+
+.post-body blockquote {
+    border-left: 5px solid var(--orange-punchy);
+    padding-left: 20px;
+    margin: 30px 0;
+    font-style: italic;
+    color: var(--orange-punchy);
+}
+
+.blog-cta {
+    background: #fdf5f0;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 50px;
+}
