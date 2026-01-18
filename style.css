@@ -64,3 +64,47 @@ body {
     cursor: pointer;
     font-weight: bold;
 }
+
+/* STYLE PAGE COACHING */
+.coaching-hero {
+    text-align: center;
+    padding: 50px 10%;
+    background-color: #fffaf0;
+}
+
+.coaching-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 50px 10%;
+    justify-content: center;
+}
+
+.expertise {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.pricing-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    background: white;
+    padding: 40px;
+    border: 2px solid var(--orange-equi);
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin: 25px 0;
+}
+
+.pricing-card li {
+    margin-bottom: 10px;
+}
