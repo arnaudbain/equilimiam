@@ -63,3 +63,62 @@ h1 {
     max-width: 900px;
     margin: 0 auto 30px auto; /* Centre le titre dans la page */
 }
+
+/* STYLE PAGE BLOG */
+.blog-hero {
+    text-align: center;
+    padding: 60px 10%;
+    background: linear-gradient(135deg, #ffffff 0%, #f0fdfa 100%);
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 50px 10%;
+}
+
+.blog-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+}
+
+.blog-image {
+    height: 200px;
+    background: var(--light-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+}
+
+.blog-content {
+    padding: 25px;
+}
+
+.category {
+    color: var(--orange-punchy);
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.blog-content h3 {
+    margin: 10px 0;
+    font-size: 1.4rem;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--lagon-blue);
+    text-decoration: none;
+    font-weight: 600;
+}
