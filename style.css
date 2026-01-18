@@ -1,115 +1,65 @@
 :root {
-    --orange-punchy: #F37021; /* Orange de ton logo */
-    --lagon-blue: #00A896;   /* Bleu lagon pour le contraste */
+    --orange-punchy: #F37021;
+    --lagon-blue: #00A896;
     --black-deep: #1A1A1A;
     --white: #ffffff;
-    --glass: rgba(255, 255, 255, 0.9);
 }
 
 body {
-    font-family: 'Poppins', sans-serif; /* Une police plus moderne */
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     color: var(--black-deep);
     background-color: #fcfcfc;
-    line-height: 1.6;
+    overflow-x: hidden; /* Évite les décalages horizontaux */
 }
 
-/* NAVBAR DYNAMIQUE */
+/* NAVBAR CENTRÉE ET PLUS AÉRÉE */
 .navbar {
     display: flex;
-    flex-direction: column; 
-    align-items: center;
-    padding: 30px 5%;
+    flex-direction: column; /* On empile Logo puis Menu */
+    align-items: center;    /* On centre tout horizontalement */
+    padding: 40px 20px;
     background: var(--white);
-    box-shadow: 0 4px 30px rgba(0,0,0,0.05);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .site-logo {
-    height: 180px; /* Taille 3x plus grosse demandée */
+    height: 180px;
     width: auto;
+    margin-bottom: 25px; /* Espace entre le logo et le menu */
     transition: transform 0.3s ease;
-}
-
-.site-logo:hover {
-    transform: scale(1.05); /* Effet de zoom au survol */
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 30px;
-    margin-top: 20px;
+    justify-content: center;
+    gap: 40px; /* Plus d'espace entre les liens */
     padding: 0;
+    margin: 0;
 }
 
 .nav-links li a {
     text-decoration: none;
     color: var(--black-deep);
-    font-weight: 700;
+    font-weight: 500; /* On réduit le gras (de 900 à 500) pour plus de finesse */
     text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.9rem;
-    transition: color 0.3s;
+    letter-spacing: 1.5px;
+    font-size: 0.95rem;
+    transition: all 0.3s;
 }
 
 .nav-links li a:hover {
     color: var(--orange-punchy);
+    letter-spacing: 3px; /* Petit effet punchy au survol */
 }
 
-/* SECTION HERO AVEC DÉGRADÉ SOLAIRE */
-.hero {
-    padding: 100px 10%;
-    text-align: center;
-    background: linear-gradient(135deg, #ffffff 0%, #fff5f0 50%, #e0f2f1 100%);
-}
-
+/* TITRES MOINS MASSIFS */
 h1 {
-    font-size: 3.5rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    line-height: 1.1;
-    margin-bottom: 20px;
-}
-
-.highlight {
-    color: var(--orange-punchy);
-    text-shadow: 2px 2px 0px rgba(243, 112, 33, 0.2);
-}
-
-/* BOUTONS PUNCHY */
-.btn-orange {
-    background: var(--orange-punchy);
-    color: white;
-    border: none;
-    padding: 18px 40px;
-    border-radius: 50px; /* Bord arrondi style moderne */
-    cursor: pointer;
-    font-weight: 800;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-    box-shadow: 0 10px 20px rgba(243, 112, 33, 0.3);
-    transition: all 0.3s ease;
-    text-decoration: none;
-    display: inline-block;
-}
-
-.btn-orange:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(243, 112, 33, 0.4);
-    background: #ff7e33;
-}
-
-/* CARTES D'OFFRES */
-.cta-card, .pricing-card, .card {
-    background: var(--glass);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.3);
-    padding: 40px;
-    border-radius: 30px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-    transition: transform 0.3s;
-}
-
-.cta-card:hover {
-    transform: translateY(-10px);
+    font-size: 3rem;
+    font-weight: 800; /* Un peu moins épais que 900 */
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 30px auto; /* Centre le titre dans la page */
 }
