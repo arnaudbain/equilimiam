@@ -109,3 +109,34 @@ body {
     border: none;
     cursor: pointer;
 }
+/* Boutons plus "Linecoaching" */
+.btn-main {
+    background: var(--orange-dark);
+    color: white;
+    padding: 18px 35px;
+    border-radius: 8px; /* Moins rond, plus pro */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: inline-block;
+    border: none;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 4px 15px rgba(243, 112, 33, 0.3);
+}
+
+.btn-main:hover {
+    background: #d35400;
+    transform: translateY(-2px);
+}
+
+/* On force le texte à être noir dans les cartes */
+.step-card h3, .step-card p, .hero-form-card h3, .hero-form-card p {
+    color: var(--text-dark) !important;
+}
+
+/* Espacement pour mobile */
+@media (max-width: 768px) {
+    .hero-section { flex-direction: column; text-align: center; }
+    .hero-text { text-align: center; }
+    .hero-form-card { width: 100%; }
+}
