@@ -1,92 +1,111 @@
 :root {
-    --orange-saumon: #FF8C69; 
-    --orange-punchy: #F37021;
-    --black-deep: #1A1A1A;
-    --white: #ffffff;
-    --bg-gradient: linear-gradient(135deg, #FF8C69 0%, #FFA07A 100%);
+    --orange-saumon: #FF8C69;
+    --orange-dark: #F37021;
+    --text-dark: #2c3e50;
+    --bg-light: #f9f9f9;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    color: var(--black-deep);
-    background-color: #FFF5F0;
-    line-height: 1.6;
-    overflow-x: hidden;
+    color: var(--text-dark);
+    background-color: white;
 }
 
-/* NAVBAR CENTRÉE */
+/* NAVBAR STYLE LINECOACHING */
 .navbar {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    padding: 40px 20px;
-    background: var(--white);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    padding: 15px 10%;
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 .site-logo {
-    height: 180px; /* Taille 3x plus grosse */
-    width: auto;
-    margin-bottom: 25px;
+    height: 80px; /* Taille plus pro pour la barre de menu */
 }
 
 .nav-links {
-    list-style: none;
     display: flex;
-    justify-content: center;
-    gap: 40px;
-    padding: 0;
+    gap: 30px;
+    list-style: none;
 }
 
-.nav-links li a {
+.nav-links a {
     text-decoration: none;
-    color: var(--black-deep);
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 0.95rem;
 }
 
-/* SECTIONS AVEC FOND SAUMON */
-.hero, .communaute-hero, .coaching-hero, .blog-hero, .soins-hero {
-    padding: 100px 10%;
+/* SECTION HERO (FOND SAUMON) */
+.hero-section {
+    background: var(--orange-saumon);
+    padding: 80px 10%;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    color: white;
+}
+
+.hero-text {
+    flex: 1;
+    text-align: left;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* CARTE FORMULAIRE DANS LE HERO */
+.hero-form-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    color: var(--text-dark);
+    width: 350px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+/* SECTION MÉTHODE (FOND BLANC) */
+.section-white {
+    padding: 80px 10%;
     text-align: center;
-    background: var(--bg-gradient);
-    color: var(--white);
 }
 
-h1 {
-    font-size: 3.5rem;
-    font-weight: 800;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
 }
 
-/* CARTES ET FORMULAIRES CENTRÉS */
-.cta-card, .pricing-card, .intro-box, .blog-cta {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 40px;
-    border-radius: 30px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    margin: 40px auto;
-    max-width: 600px;
-    text-align: center;
-}
-
-.btn-orange {
-    background: var(--black-deep);
-    color: var(--white);
-    border: none;
-    padding: 18px 40px;
-    border-radius: 50px;
-    cursor: pointer;
-    font-weight: 800;
-    text-decoration: none;
-    display: inline-block;
+.step-card {
+    padding: 30px;
+    border: 1px solid #eee;
+    border-radius: 10px;
     transition: 0.3s;
 }
 
-.btn-orange:hover {
+.step-card:hover {
+    border-color: var(--orange-saumon);
     transform: translateY(-5px);
-    background: var(--orange-punchy);
+}
+
+.btn-main {
+    background: var(--orange-dark);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
 }
