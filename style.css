@@ -1,1 +1,66 @@
+:root {
+    --orange-equi: #F37021; /* L'orange de ton logo */
+    --black-equi: #000000;
+    --white: #ffffff;
+    --light-gray: #f4f4f4;
+}
 
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    color: var(--black-equi);
+    background-color: var(--white);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.site-logo {
+    height: 60px; /* Ajuste selon tes préférences */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--black-equi);
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.hero {
+    padding: 60px 5%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(to bottom, #ffffff, #fff5f0);
+}
+
+.highlight { color: var(--orange-equi); }
+
+.cta-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.btn-orange {
+    background-color: var(--orange-equi);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
