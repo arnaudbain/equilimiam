@@ -1,215 +1,115 @@
 :root {
-    --orange-equi: #F37021; /* L'orange de ton logo */
-    --black-equi: #000000;
+    --orange-punchy: #F37021; /* Orange de ton logo */
+    --lagon-blue: #00A896;   /* Bleu lagon pour le contraste */
+    --black-deep: #1A1A1A;
     --white: #ffffff;
-    --light-gray: #f4f4f4;
+    --glass: rgba(255, 255, 255, 0.9);
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif; /* Une police plus moderne */
     margin: 0;
-    color: var(--black-equi);
-    background-color: var(--white);
+    color: var(--black-deep);
+    background-color: #fcfcfc;
+    line-height: 1.6;
 }
 
+/* NAVBAR DYNAMIQUE */
 .navbar {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; 
     align-items: center;
-    padding: 15px 5%;
-    border-bottom: 1px solid var(--light-gray);
+    padding: 30px 5%;
+    background: var(--white);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.05);
 }
 
 .site-logo {
-    height: 60px; /* Ajuste selon tes préférences */
+    height: 180px; /* Taille 3x plus grosse demandée */
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.site-logo:hover {
+    transform: scale(1.05); /* Effet de zoom au survol */
 }
 
 .nav-links {
     list-style: none;
     display: flex;
+    gap: 30px;
+    margin-top: 20px;
+    padding: 0;
 }
 
 .nav-links li a {
     text-decoration: none;
-    color: var(--black-equi);
-    margin-left: 20px;
-    font-weight: bold;
+    color: var(--black-deep);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    transition: color 0.3s;
 }
 
+.nav-links li a:hover {
+    color: var(--orange-punchy);
+}
+
+/* SECTION HERO AVEC DÉGRADÉ SOLAIRE */
 .hero {
-    padding: 60px 5%;
-    display: flex;
-    justify-content: center;
+    padding: 100px 10%;
     text-align: center;
-    background: linear-gradient(to bottom, #ffffff, #fff5f0);
+    background: linear-gradient(135deg, #ffffff 0%, #fff5f0 50%, #e0f2f1 100%);
 }
 
-.highlight { color: var(--orange-equi); }
-
-.cta-card {
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    display: inline-block;
-    margin-top: 20px;
+h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 20px;
 }
 
+.highlight {
+    color: var(--orange-punchy);
+    text-shadow: 2px 2px 0px rgba(243, 112, 33, 0.2);
+}
+
+/* BOUTONS PUNCHY */
 .btn-orange {
-    background-color: var(--orange-equi);
+    background: var(--orange-punchy);
     color: white;
     border: none;
-    padding: 12px 25px;
-    border-radius: 5px;
+    padding: 18px 40px;
+    border-radius: 50px; /* Bord arrondi style moderne */
     cursor: pointer;
-    font-weight: bold;
-}
-
-/* STYLE PAGE COACHING */
-.coaching-hero {
-    text-align: center;
-    padding: 50px 10%;
-    background-color: #fffaf0;
-}
-
-.coaching-content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    padding: 50px 10%;
-    justify-content: center;
-}
-
-.expertise {
-    flex: 1;
-    min-width: 300px;
-    max-width: 500px;
-}
-
-.pricing-card {
-    flex: 1;
-    min-width: 300px;
-    max-width: 400px;
-    background: white;
-    padding: 40px;
-    border: 2px solid var(--orange-equi);
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-}
-
-.pricing-card ul {
-    list-style: none;
-    padding: 0;
-    text-align: left;
-    margin: 25px 0;
-}
-
-.pricing-card li {
-    margin-bottom: 10px;
-}
-
-
-/* STYLE PAGE COMMUNAUTÉ */
-.communaute-hero {
-    text-align: center;
-    padding: 60px 10%;
-    background-color: #f0f7f7; /* Bleu lagon très clair */
-}
-
-.communaute-grid {
-    display: flex;
-    justify-content: space-around;
-    padding: 50px 5%;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.card {
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    width: 250px;
-    text-align: center;
-}
-
-.cta-section {
-    padding: 50px 10%;
-    text-align: center;
-}
-
-.pricing-box {
-    background: var(--black-equi);
-    color: white;
-    padding: 40px;
-    border-radius: 20px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    box-shadow: 0 10px 20px rgba(243, 112, 33, 0.3);
+    transition: all 0.3s ease;
+    text-decoration: none;
     display: inline-block;
 }
 
-.pricing-box .price {
-    font-size: 3rem;
-    font-weight: bold;
-    color: var(--orange-equi);
-    margin: 20px 0;
+.btn-orange:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(243, 112, 33, 0.4);
+    background: #ff7e33;
 }
 
-.pricing-box .price span {
-    font-size: 1rem;
-    color: white;
-}
-
-
-.benefits-list {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
-    text-align: left;
-}
-
-.benefits-list li {
-    margin-bottom: 10px;
-}
-
-.social-icons-preview {
-    margin-top: 30px;
-    border-top: 1px solid #444;
-    padding-top: 20px;
-}
-
-.mini-icon {
-    width: 30px;
-    margin: 0 10px;
-    filter: grayscale(1) invert(1); /* Pour que les icônes restent élégantes en blanc */
-    transition: 0.3s;
-}
-
-.mini-icon:hover {
-    filter: none;
-}
-
-
-/* STYLE PAGE SOINS */
-.soins-hero {
-    text-align: center;
-    padding: 60px 10%;
-    background-color: #f4fcf4; /* Vert très pâle pour le côté naturel */
-}
-
-.soins-intro {
-    padding: 50px 10%;
-    text-align: center;
-}
-
-.intro-box {
-    background: white;
+/* CARTES D'OFFRES */
+.cta-card, .pricing-card, .card {
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.3);
     padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    max-width: 700px;
-    margin: 0 auto;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
 }
 
-.intro-box h2 {
-    margin-bottom: 20px;
+.cta-card:hover {
+    transform: translateY(-10px);
 }
