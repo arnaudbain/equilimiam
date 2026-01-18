@@ -1,164 +1,92 @@
 :root {
+    --orange-saumon: #FF8C69; 
     --orange-punchy: #F37021;
-    --lagon-blue: #00A896;
     --black-deep: #1A1A1A;
     --white: #ffffff;
+    --bg-gradient: linear-gradient(135deg, #FF8C69 0%, #FFA07A 100%);
 }
 
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     color: var(--black-deep);
-    background-color: #fcfcfc;
-    overflow-x: hidden; /* Évite les décalages horizontaux */
+    background-color: #FFF5F0;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* NAVBAR CENTRÉE ET PLUS AÉRÉE */
+/* NAVBAR CENTRÉE */
 .navbar {
     display: flex;
-    flex-direction: column; /* On empile Logo puis Menu */
-    align-items: center;    /* On centre tout horizontalement */
+    flex-direction: column;
+    align-items: center;
     padding: 40px 20px;
     background: var(--white);
-    width: 100%;
-    box-sizing: border-box;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 
 .site-logo {
-    height: 180px;
+    height: 180px; /* Taille 3x plus grosse */
     width: auto;
-    margin-bottom: 25px; /* Espace entre le logo et le menu */
-    transition: transform 0.3s ease;
+    margin-bottom: 25px;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 40px; /* Plus d'espace entre les liens */
+    gap: 40px;
     padding: 0;
-    margin: 0;
 }
 
 .nav-links li a {
     text-decoration: none;
     color: var(--black-deep);
-    font-weight: 500; /* On réduit le gras (de 900 à 500) pour plus de finesse */
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-size: 0.95rem;
-    transition: all 0.3s;
-}
-
-.nav-links li a:hover {
-    color: var(--orange-punchy);
-    letter-spacing: 3px; /* Petit effet punchy au survol */
-}
-
-/* TITRES MOINS MASSIFS */
-h1 {
-    font-size: 3rem;
-    font-weight: 800; /* Un peu moins épais que 900 */
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto 30px auto; /* Centre le titre dans la page */
-}
-
-/* STYLE PAGE BLOG */
-.blog-hero {
-    text-align: center;
-    padding: 60px 10%;
-    background: linear-gradient(135deg, #ffffff 0%, #f0fdfa 100%);
-}
-
-.blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    padding: 50px 10%;
-}
-
-.blog-card {
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
-}
-
-.blog-card:hover {
-    transform: translateY(-10px);
-}
-
-.blog-image {
-    height: 200px;
-    background: var(--light-gray);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 4rem;
-}
-
-.blog-content {
-    padding: 25px;
-}
-
-.category {
-    color: var(--orange-punchy);
-    font-weight: 700;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-}
-
-.blog-content h3 {
-    margin: 10px 0;
-    font-size: 1.4rem;
-}
-
-.read-more {
-    display: inline-block;
-    margin-top: 15px;
-    color: var(--lagon-blue);
-    text-decoration: none;
     font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
 }
 
-
-/* STYLE PAGE ARTICLE DÉTAILLÉ */
-.post-container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 0 20px;
-}
-
-.post-header {
+/* SECTIONS AVEC FOND SAUMON */
+.hero, .communaute-hero, .coaching-hero, .blog-hero, .soins-hero {
+    padding: 100px 10%;
     text-align: center;
-    margin-bottom: 50px;
+    background: var(--bg-gradient);
+    color: var(--white);
 }
 
-.post-body {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: #333;
+h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
 
-.post-body h2 {
-    margin-top: 40px;
-    color: var(--black-deep);
-}
-
-.post-body blockquote {
-    border-left: 5px solid var(--orange-punchy);
-    padding-left: 20px;
-    margin: 30px 0;
-    font-style: italic;
-    color: var(--orange-punchy);
-}
-
-.blog-cta {
-    background: #fdf5f0;
+/* CARTES ET FORMULAIRES CENTRÉS */
+.cta-card, .pricing-card, .intro-box, .blog-cta {
+    background: rgba(255, 255, 255, 0.95);
     padding: 40px;
-    border-radius: 20px;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    margin: 40px auto;
+    max-width: 600px;
     text-align: center;
-    margin-top: 50px;
+}
+
+.btn-orange {
+    background: var(--black-deep);
+    color: var(--white);
+    border: none;
+    padding: 18px 40px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 800;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn-orange:hover {
+    transform: translateY(-5px);
+    background: var(--orange-punchy);
 }
