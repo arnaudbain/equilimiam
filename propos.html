@@ -2,29 +2,121 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>À Propos | Equilimiam</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo-container"><img src="assets/equilimiam.jpg" alt="Logo"></div>
-        <ul class="nav-links">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="coaching.html">Coaching</a></li>
-            <li><a href="propos.html">À Propos</a></li>
-            <li><a href="soins.html">Soins</a></li>
+
+<nav class="navbar">
+    <div class="logo-container">
+        <img src="assets/equilimiam.jpg" alt="Equilimiam Logo">
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="coaching.html">Coaching</a></li>
+        <li><a href="propos.html">À Propos</a></li>
+        <li><a href="soins.html">Soins</a></li>
+    </ul>
+</nav>
+
+<header class="hero-section">
+    <div class="hero-text">
+        <h1>La Force de <br><span>l'Équilibre.</span></h1>
+        <p>De l'exigence du haut niveau à la douceur d'une santé durable.</p>
+    </div>
+</header>
+
+<main class="article-layout" style="max-width: 850px; margin: 60px auto; padding: 0 20px; text-align: left;">
+    <div class="article-body">
+        <h2>Mon Parcours d'Athlète</h2>
+        <p>Ancien athlète de haut niveau, j'ai consacré une grande partie de ma vie à la recherche de la performance absolue. Cette école de la rigueur m'a appris à écouter mon corps, à repousser mes limites, mais aussi à comprendre l'importance vitale de la récupération et de la prévention.</p>
+        
+        <div class="info-highlight" style="background: #fff5f0; border-left: 5px solid var(--orange-saumon); padding: 25px; margin: 30px 0; border-radius: 10px;">
+            <p><strong>Ma mission aujourd'hui :</strong> Transposer cette expertise du haut niveau pour vous aider à "bien vieillir" avec énergie et sans douleur.</p>
+        </div>
+
+        <h2>Pourquoi Equilimiam ?</h2>
+        <p>Le nom <strong>Equilimiam</strong> est né de la fusion entre l'équilibre et le plaisir. Je refuse les régimes drastiques et le sport punitif. Mon approche est holistique, car pour moi, la santé repose sur trois piliers indissociables :</p>
+        
+        <ul style="line-height: 2; margin-bottom: 30px;">
+            <li>✅ <strong>Le Mouvement :</strong> Retrouver une mobilité fluide pour un corps sans blocages.</li>
+            <li>✅ <strong>La Nutrition 80/20 :</strong> 80% de discipline pour la santé, 20% de plaisir pour le moral.</li>
+            <li>✅ <strong>Le Mental :</strong> Utiliser la respiration (cohérence cardiaque) pour maîtriser le stress.</li>
         </ul>
-    </nav>
 
-    <header class="hero-section">
-        <h1>La Force de l'Équilibre</h1>
-    </header>
+        <h2>Ma Philosophie</h2>
+        <p>On ne change pas ses habitudes par la contrainte, mais par la compréhension. En travaillant avec moi, vous n'apprenez pas seulement à faire des exercices, vous apprenez à devenir l'expert de votre propre vitalité.</p>
 
-    <main style="max-width:800px; margin:60px auto; padding: 0 20px; text-align: left;">
-        <h2>Mon Histoire</h2>
-        <p>Ancien athlète de haut niveau, j'ai fondé **Equilimiam** pour partager une vision de la santé durable, loin des régimes punitifs.</p>
-        <p>Ma méthode repose sur le plaisir et l'équilibre : la règle du **80/20**.</p>
-    </main>
+        <div style="text-align: center; margin-top: 60px; padding: 40px; background: #f9f9f9; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+            <h3>Vous voulez en savoir plus ?</h3>
+            <p>Discutez avec <strong>Limova</strong>, mon assistante IA, pour découvrir comment ma méthode peut s'adapter à votre profil.</p>
+            <br>
+            <button class="btn-main" onclick="alert('Utilisez la bulle de discussion en bas à droite pour poser vos questions !')">POSER UNE QUESTION À L'IA</button>
+        </div>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-container" style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+        <div class="footer-info">
+            <img src="assets/equilimiam.jpg" alt="Logo Equilimiam" class="footer-logo">
+            <p>Vivre avec plaisir pour bien vieillir.</p>
+        </div>
+        <div class="footer-links">
+            <h4>Lien Rapide</h4>
+            <ul>
+                <li><a href="mentions.html">Mentions Légales</a></li>
+                <li><a href="index.html">Accueil</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom" style="margin-top: 20px;">
+        <p>&copy; 2026 Equilimiam - Tous droits réservés</p>
+    </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const iframe = document.createElement("iframe");
+  iframe.src = "https://limova-web-sltj.onrender.com/embededChatbot?connectionId=ac5e6b43-6645-47de-b03e-be4b361bac8a";
+  const isMobile = window.innerWidth < 768;
+  const openWidth = isMobile ? "90%" : "420px";
+  const openHeight = isMobile ? "calc(100vh - 100px)" : "600px";
+  const closedWidth = "70px";
+  const closedHeight = "70px";
+  const right = isMobile ? "5%" : "30px";
+  Object.assign(iframe.style, {
+    position: "fixed",
+    bottom: "20px",
+    right: right,
+    border: "none",
+    zIndex: "1000",
+    width: closedWidth,
+    height: closedHeight,
+    borderRadius: "35px",
+    transition: "width 0.3s ease, height 0.3s ease, border-radius 0.3s ease",
+    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
+    overflow: "hidden"
+  });
+  document.body.appendChild(iframe);
+  window.addEventListener("message", function(event) {
+    const data = event.data;
+    if (data && typeof data === "object" && "chatbotOpen" in data) {
+      if (data.chatbotOpen === true) {
+        iframe.style.width = openWidth;
+        iframe.style.height = openHeight;
+        iframe.style.borderRadius = "10px";
+      } else if (data.chatbotOpen === false) {
+        iframe.style.width = closedWidth;
+        iframe.style.height = closedHeight;
+        iframe.style.borderRadius = "35px";
+      }
+    }
+  });
+});
+</script>
+
 </body>
 </html>
