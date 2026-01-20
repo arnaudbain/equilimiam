@@ -93,8 +93,49 @@ body {
 
 .article-layout { max-width: 750px; margin: 60px auto; padding: 0 20px; }
 
+/* OPTIMISATION MOBILE POUR LE MENU */
 @media (max-width: 768px) {
-    .hero-section { flex-direction: column; text-align: center; }
-    .hero-text { text-align: center; }
-    .nav-links { display: none; }
+    .navbar {
+        flex-direction: column; /* On empile le logo et le menu */
+        height: auto;           /* On laisse la barre s'agrandir */
+        padding: 20px 0;
+    }
+
+    .logo-container {
+        margin-bottom: 20px;
+    }
+
+    .nav-links {
+        flex-direction: column; /* Les liens s'empilent verticalement */
+        gap: 15px;              /* Espace confortable pour cliquer avec le doigt */
+        text-align: center;
+        width: 100%;
+        padding: 0;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 10px 0;
+        font-size: 1.1rem; /* On grossit un peu le texte pour le mobile */
+        border-bottom: 1px solid #eee; /* Petite ligne de séparation */
+    }
+
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 5%;
+    }
+
+    .hero-text h1 {
+        font-size: 2.2rem; /* On réduit le titre pour qu'il ne déborde pas */
+    }
+
+    .hero-form-card {
+        width: 100%;
+        margin-top: 30px;
+    }
 }
