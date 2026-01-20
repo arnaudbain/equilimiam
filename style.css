@@ -15,10 +15,10 @@ body {
     padding: 0;
     color: var(--text-dark);
     background-color: var(--white);
-    text-align: center;
+    text-align: center; /* Force le centrage global */
 }
 
-/* NAVBAR CENTRÉE */
+/* NAVBAR */
 .navbar {
     display: flex;
     flex-direction: column;
@@ -36,7 +36,7 @@ body {
 
 .nav-links {
     display: flex;
-    gap: 30px;
+    gap: 25px;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -47,40 +47,34 @@ body {
     color: var(--text-dark);
     font-weight: 600;
     text-transform: uppercase;
+    font-size: 0.9rem;
 }
 
-/* HERO SECTION */
+/* SECTIONS COLORÉES */
 .hero-section {
     background: var(--orange-saumon);
     padding: 60px 10%;
+    color: var(--white);
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: var(--white);
 }
 
 .hero-text h1 { font-size: 3rem; color: var(--white); margin-bottom: 20px; }
 
-/* CARTES ET BLOCS CENTRÉS */
-.hero-form-card, .step-card {
+/* CARTES ET BLOCS */
+.hero-form-card {
     background: var(--white);
-    padding: 35px;
+    padding: 40px;
     border-radius: 20px;
     width: 100%;
     max-width: 500px;
-    margin: 0 auto;
+    margin: 20px auto;
     box-shadow: 0 15px 35px rgba(0,0,0,0.1);
     color: var(--text-dark);
 }
 
 .section-white { padding: 60px 10%; max-width: 1200px; margin: 0 auto; }
-
-.grid-3 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin: 40px auto;
-}
 
 /* BOUTONS */
 .btn-main {
@@ -91,9 +85,11 @@ body {
     text-decoration: none;
     font-weight: bold;
     display: inline-block;
+    border: none;
+    cursor: pointer;
 }
 
-/* WHATSAPP */
+/* WHATSAPP FLOTTANT */
 .whatsapp-float {
     position: fixed;
     bottom: 30px;
@@ -107,8 +103,9 @@ body {
     gap: 10px;
     text-decoration: none;
     z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 /* FOOTER */
-.site-footer { background: #f9f9f9; padding: 60px 10%; border-top: 1px solid #eee; }
+.site-footer { background: #f9f9f9; padding: 60px 10%; border-top: 1px solid #eee; margin-top: 50px; }
 .footer-logo { height: 70px !important; margin-bottom: 20px; }
