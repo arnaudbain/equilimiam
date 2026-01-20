@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Equilimiam | Bien Vieillir avec Plaisir</title>
+    <title>Equilimiam | Accueil</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -29,24 +29,18 @@
                 <input type="email" placeholder="Votre email" required style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ddd; border-radius:5px;">
                 <button type="submit" class="btn-main" style="width:100%;">RECEVOIR LE PDF</button>
             </form>
+            <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
+            <p style="font-size: 0.9rem;">Besoin d'un diagnostic ?</p>
+            <button class="btn-main" onclick="openLimovaChat()" style="width:100%; background: var(--text-dark);">DISCUTER AVEC LIMOVA</button>
         </div>
     </header>
 
     <section class="section-white">
         <h2>Ma méthode en 3 piliers</h2>
         <div class="grid-3">
-            <div class="step-card">
-                <h3>🏃‍♂️ Mobilité</h3>
-                <p>Retrouvez un corps fluide et sans douleurs articulaires grâce à des routines simples.</p>
-            </div>
-            <div class="step-card">
-                <h3>🥗 Nutrition 80/20</h3>
-                <p>Mangez de tout avec plaisir. Pas de régime restrictif, juste du bon sens.</p>
-            </div>
-            <div class="step-card">
-                <h3>🧘‍♂️ Respiration</h3>
-                <p>Maîtrisez votre stress et boostez votre vitalité avec la cohérence cardiaque.</p>
-            </div>
+            <div class="step-card"><h3>🏃‍♂️ Mobilité</h3><p>Retrouvez un corps fluide sans douleurs.</p></div>
+            <div class="step-card"><h3>🥗 Nutrition 80/20</h3><p>Mangez de tout avec plaisir.</p></div>
+            <div class="step-card"><h3>🧘‍♂️ Respiration</h3><p>Maîtrisez votre stress au quotidien.</p></div>
         </div>
     </section>
 
@@ -56,25 +50,15 @@
     </footer>
 
     <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const iframe = document.createElement("iframe");
-      iframe.src = "https://limova-web-sltj.onrender.com/embededChatbot?connectionId=ac5e6b43-6645-47de-b03e-be4b361bac8a";
-      const isMobile = window.innerWidth < 768;
-      const openWidth = isMobile ? "90%" : "420px";
-      const openHeight = isMobile ? "calc(100vh - 100px)" : "600px";
-      const closedWidth = "70px";
-      const closedHeight = "70px";
-      const right = isMobile ? "5%" : "30px";
-      Object.assign(iframe.style, { position: "fixed", bottom: "20px", right: right, border: "none", zIndex: "1000", width: closedWidth, height: closedHeight, borderRadius: "35px", transition: "width 0.3s ease, height 0.3s ease, border-radius 0.3s ease", boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)", overflow: "hidden" });
-      document.body.appendChild(iframe);
-      window.addEventListener("message", function(event) {
-        const data = event.data;
-        if (data && typeof data === "object" && "chatbotOpen" in data) {
-          if (data.chatbotOpen === true) { iframe.style.width = openWidth; iframe.style.height = openHeight; iframe.style.borderRadius = "10px"; }
-          else { iframe.style.width = closedWidth; iframe.style.height = closedHeight; iframe.style.borderRadius = "35px"; }
-        }
-      });
-    });
-    </script> 
+      window.limovaConfig = {
+        agentId: 'fbab6092-35b5-4ae7-aa22-fdbc48fb6c5b',
+        position: 'bottom-right',
+        primaryColor: '#FF8C69' // Ta couleur saumon
+      };
+      function openLimovaChat() {
+        if (window.limova) { window.limova.open(); }
+      }
+    </script>
+    <script src="https://widget.limova.app/v1/widget.js" async></script>
 </body>
 </html>
