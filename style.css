@@ -1,4 +1,3 @@
-/* --- CONFIGURATION GLOBALE --- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
 
 :root {
@@ -6,12 +5,9 @@
     --orange-dark: #F37021;
     --text-dark: #2c3e50;
     --white: #ffffff;
-    --bg-light: #fcfcfc;
 }
 
-* {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -19,30 +15,30 @@ body {
     padding: 0;
     color: var(--text-dark);
     background-color: var(--white);
-    line-height: 1.6;
-    overflow-x: hidden; /* Empêche le défilement horizontal bizarre */
+    text-align: center; /* Force le centrage par défaut */
 }
 
-/* --- NAVIGATION UNIQUE (HAUT DE PAGE) --- */
+/* NAVBAR CENTRÉE */
 .navbar {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* Empile logo et menu */
     align-items: center;
-    padding: 10px 10%;
+    padding: 20px 0;
     background: var(--white);
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    height: 100px;
 }
 
 .logo-container img {
-    height: 70px !important; /* Taille pro */
+    height: 80px !important;
     width: auto !important;
+    margin-bottom: 15px;
 }
 
 .nav-links {
     display: flex;
-    gap: 25px;
+    gap: 30px;
     list-style: none;
+    padding: 0;
     margin: 0;
 }
 
@@ -50,23 +46,49 @@ body {
     text-decoration: none;
     color: var(--text-dark);
     font-weight: 600;
-    font-size: 0.85rem;
     text-transform: uppercase;
 }
 
-/* --- SECTIONS COLORÉES (HERO) --- */
+/* SECTIONS COLORÉES (HERO) */
 .hero-section {
     background: var(--orange-saumon);
     padding: 60px 10%;
     display: flex;
+    flex-direction: column; /* Centre tout verticalement */
     align-items: center;
-    justify-content: center; /* Centre le contenu global */
-    gap: 50px;
     color: var(--white);
-    min-height: 400px;
 }
 
 .hero-text {
-    flex: 1;
-    max-width: 600px;
-    text-align: left;
+    max-width: 800px;
+    margin-bottom: 30px;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    color: var(--white);
+    margin: 0 0 20px 0;
+}
+
+/* CARTE BLANCHE CENTRÉE */
+.hero-form-card {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 500px; /* Taille contenue */
+    margin: 0 auto;   /* LE SECRET DU CENTRAGE */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    color: var(--text-dark);
+}
+
+/* GRILLES ET CONTENU BLANC */
+.section-white {
+    padding: 80px 10%;
+    max-width: 1200px;
+    margin: 0 auto; /* Centre le bloc entier */
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(
