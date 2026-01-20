@@ -15,13 +15,13 @@ body {
     padding: 0;
     color: var(--text-dark);
     background-color: var(--white);
-    text-align: center; /* Force le centrage par défaut */
+    text-align: center;
 }
 
 /* NAVBAR CENTRÉE */
 .navbar {
     display: flex;
-    flex-direction: column; /* Empile logo et menu */
+    flex-direction: column;
     align-items: center;
     padding: 20px 0;
     background: var(--white);
@@ -49,46 +49,66 @@ body {
     text-transform: uppercase;
 }
 
-/* SECTIONS COLORÉES (HERO) */
+/* HERO SECTION */
 .hero-section {
     background: var(--orange-saumon);
     padding: 60px 10%;
     display: flex;
-    flex-direction: column; /* Centre tout verticalement */
+    flex-direction: column;
     align-items: center;
     color: var(--white);
 }
 
-.hero-text {
-    max-width: 800px;
-    margin-bottom: 30px;
-}
+.hero-text h1 { font-size: 3rem; color: var(--white); margin-bottom: 20px; }
 
-.hero-text h1 {
-    font-size: 3rem;
-    color: var(--white);
-    margin: 0 0 20px 0;
-}
-
-/* CARTE BLANCHE CENTRÉE */
-.hero-form-card {
+/* CARTES ET BLOCS CENTRÉS */
+.hero-form-card, .step-card {
     background: var(--white);
-    padding: 40px;
+    padding: 35px;
     border-radius: 20px;
     width: 100%;
-    max-width: 500px; /* Taille contenue */
-    margin: 0 auto;   /* LE SECRET DU CENTRAGE */
+    max-width: 500px;
+    margin: 0 auto;
     box-shadow: 0 15px 35px rgba(0,0,0,0.1);
     color: var(--text-dark);
 }
 
-/* GRILLES ET CONTENU BLANC */
-.section-white {
-    padding: 80px 10%;
-    max-width: 1200px;
-    margin: 0 auto; /* Centre le bloc entier */
-}
+.section-white { padding: 60px 10%; max-width: 1200px; margin: 0 auto; }
 
 .grid-3 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px auto;
+}
+
+/* BOUTONS */
+.btn-main {
+    background: var(--orange-dark);
+    color: white;
+    padding: 16px 40px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+
+/* WHATSAPP */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25d366;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    z-index: 1000;
+}
+
+/* FOOTER */
+.site-footer { background: #f9f9f9; padding: 60px 10%; border-top: 1px solid #eee; }
+.footer-logo { height: 70px !important; margin-bottom: 20px; }
