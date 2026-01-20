@@ -1,3 +1,4 @@
+/* --- CONFIGURATION GLOBALE --- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
 
 :root {
@@ -5,6 +6,11 @@
     --orange-dark: #F37021;
     --text-dark: #2c3e50;
     --white: #ffffff;
+    --bg-light: #fcfcfc;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
@@ -14,21 +20,23 @@ body {
     color: var(--text-dark);
     background-color: var(--white);
     line-height: 1.6;
+    overflow-x: hidden; /* Empêche le défilement horizontal bizarre */
 }
 
-/* NAVBAR NETTOYÉE */
+/* --- NAVIGATION UNIQUE (HAUT DE PAGE) --- */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 8%;
+    padding: 10px 10%;
     background: var(--white);
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    height: 100px;
 }
 
 .logo-container img {
-    height: 80px; /* Taille fixe pour éviter le logo géant */
-    width: auto;
+    height: 70px !important; /* Taille pro */
+    width: auto !important;
 }
 
 .nav-links {
@@ -42,170 +50,23 @@ body {
     text-decoration: none;
     color: var(--text-dark);
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
 }
 
-/* SECTIONS COLORÉES */
+/* --- SECTIONS COLORÉES (HERO) --- */
 .hero-section {
     background: var(--orange-saumon);
     padding: 60px 10%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 40px;
+    justify-content: center; /* Centre le contenu global */
+    gap: 50px;
     color: var(--white);
+    min-height: 400px;
 }
 
-.hero-text { flex: 1; text-align: left; }
-.hero-text h1 { font-size: 3rem; line-height: 1.2; margin-bottom: 20px; color: var(--white); }
-
-/* CARTE FORMULAIRE */
-.hero-form-card {
-    background: var(--white);
-    padding: 30px;
-    border-radius: 15px;
-    width: 350px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    color: var(--text-dark);
-}
-
-.hero-form-card h3 { margin-top: 0; color: var(--orange-dark); }
-
-/* BOUTONS */
-.btn-main {
-    background: var(--orange-dark);
-    color: white;
-    padding: 15px 25px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-block;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-}
-
-/* GRILLE ET ARTICLES */
-.section-white { padding: 60px 10%; text-align: center; }
-.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
-.step-card { padding: 30px; border: 1px solid #eee; border-radius: 12px; text-align: left; }
-
-.article-layout { max-width: 750px; margin: 60px auto; padding: 0 20px; }
-
-/* OPTIMISATION MOBILE POUR LE MENU */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column; /* On empile le logo et le menu */
-        height: auto;           /* On laisse la barre s'agrandir */
-        padding: 20px 0;
-    }
-
-    .logo-container {
-        margin-bottom: 20px;
-    }
-
-    .nav-links {
-        flex-direction: column; /* Les liens s'empilent verticalement */
-        gap: 15px;              /* Espace confortable pour cliquer avec le doigt */
-        text-align: center;
-        width: 100%;
-        padding: 0;
-    }
-
-    .nav-links li {
-        width: 100%;
-    }
-
-    .nav-links a {
-        display: block;
-        padding: 10px 0;
-        font-size: 1.1rem; /* On grossit un peu le texte pour le mobile */
-        border-bottom: 1px solid #eee; /* Petite ligne de séparation */
-    }
-
-    .hero-section {
-        flex-direction: column;
-        text-align: center;
-        padding: 40px 5%;
-    }
-
-    .hero-text h1 {
-        font-size: 2.2rem; /* On réduit le titre pour qu'il ne déborde pas */
-    }
-
-    .hero-form-card {
-        width: 100%;
-        margin-top: 30px;
-    }
-}
-
-/* FOOTER DESIGN */
-.site-footer {
-    background-color: #fcfcfc;
-    padding: 60px 10% 20px 10%;
-    border-top: 1px solid #eee;
-    color: var(--text-dark);
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-}
-
-.footer-logo {
-    height: 50px;
-    margin-bottom: 15px;
-}
-
-.footer-info { flex: 2; min-width: 250px; }
-.footer-links { flex: 1; min-width: 150px; }
-.footer-social { flex: 1; min-width: 150px; }
-
-.footer-links h4, .footer-social h4 {
-    margin-bottom: 20px;
-    color: var(--orange-dark);
-    text-transform: uppercase;
-    font-size: 0.9rem;
-}
-
-.footer-links ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-links li { margin-bottom: 10px; }
-.footer-links a { text-decoration: none; color: #666; transition: 0.3s; }
-.footer-links a:hover { color: var(--orange-dark); }
-
-.social-icons a {
-    text-decoration: none;
-    background: var(--text-dark);
-    color: white;
-    width: 35px;
-    height: 35px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    margin-right: 10px;
-    font-weight: bold;
-    font-size: 0.8rem;
-    transition: 0.3s;
-}
-
-.social-icons a:hover {
-    background: var(--orange-saumon);
-    transform: translateY(-3px);
-}
-
-.footer-bottom {
-    text-align: center;
-    border-top: 1px solid #eee;
-    padding-top: 20px;
-    font-size: 0.8rem;
-    color: #999;
-}
+.hero-text {
+    flex: 1;
+    max-width: 600px;
+    text-align: left;
