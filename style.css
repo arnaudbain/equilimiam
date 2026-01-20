@@ -1,3 +1,4 @@
+/* CONFIGURATION GÉNÉRALE */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
 
 :root {
@@ -15,10 +16,10 @@ body {
     padding: 0;
     color: var(--text-dark);
     background-color: var(--white);
-    text-align: center; /* Force le centrage global */
+    text-align: center; /* Centrage automatique de tous les textes */
 }
 
-/* NAVBAR */
+/* NAVIGATION (LOGO EN HAUT ET CENTRÉ) */
 .navbar {
     display: flex;
     flex-direction: column;
@@ -50,7 +51,7 @@ body {
     font-size: 0.9rem;
 }
 
-/* SECTIONS COLORÉES */
+/* SECTIONS HERO (COULEUR SAUMON) */
 .hero-section {
     background: var(--orange-saumon);
     padding: 60px 10%;
@@ -62,7 +63,7 @@ body {
 
 .hero-text h1 { font-size: 3rem; color: var(--white); margin-bottom: 20px; }
 
-/* CARTES ET BLOCS */
+/* CARTES ET BLOCS CENTRÉS */
 .hero-form-card {
     background: var(--white);
     padding: 40px;
@@ -86,7 +87,6 @@ body {
     font-weight: bold;
     display: inline-block;
     border: none;
-    cursor: pointer;
 }
 
 /* WHATSAPP FLOTTANT */
@@ -106,6 +106,12 @@ body {
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-/* FOOTER */
+/* PIED DE PAGE */
 .site-footer { background: #f9f9f9; padding: 60px 10%; border-top: 1px solid #eee; margin-top: 50px; }
 .footer-logo { height: 70px !important; margin-bottom: 20px; }
+
+/* RESPONSIVE MOBILE */
+@media (max-width: 768px) {
+    .nav-links { flex-direction: column; gap: 10px; }
+    .hero-text h1 { font-size: 2.2rem; }
+}
