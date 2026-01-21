@@ -23,35 +23,50 @@
 
 <header class="hero-section">
     <div class="hero-text">
-        <h1>Votre Bilan <br>Nutritionnel</h1>
-        <p>Prenez 2 minutes pour échanger avec Limova, mon assistant IA.</p>
+        <h1>Un accompagnement <br>sur-mesure.</h1>
+        <p>Sport, Nutrition et Mental : je vous coache pour atteindre vos objectifs durablement.</p>
+    </div>
+    <div class="hero-form-card">
+        <h3>Bilan Offert</h3>
+        <p>Analysez vos besoins avec mon assistant nutritionnel avant notre échange.</p>
+        <button class="btn-main" onclick="openLimovaChat()" style="width:100%; cursor:pointer; border:none;">
+            DÉMARRER MON BILAN
+        </button>
     </div>
 </header>
 
-<main class="section-white">
-    <div class="hero-form-card" style="max-width: 800px; padding: 10px; height: 650px; overflow: hidden; margin: -50px auto 40px auto; border: 2px solid var(--orange-saumon);">
-        <iframe 
-            src="https://limova-web-sltj.onrender.com/embededChatbot?connectionId=c958d86d-c5d2-4d63-b5cd-b28a6c012c72" 
-            style="width: 100%; height: 100%; border: none; border-radius: 10px;"
-            title="Chatbot Limova">
-        </iframe>
-    </div>
-
-    <div style="max-width:800px; margin: 0 auto; text-align: left;">
-        <h2>Pourquoi ce bilan ?</h2>
-        <p>Ce premier échange permet de définir votre profil et vos objectifs avant notre premier rendez-vous de coaching holistique.</p>
-        <ul style="list-style: none; padding: 0; line-height: 2;">
-            <li>✅ <strong>Évaluation :</strong> État de forme actuel.</li>
-            <li>✅ <strong>Objectifs :</strong> Perte de poids ou vitalité.</li>
-            <li>✅ <strong>Méthode :</strong> Conseils personnalisés basés sur le 80/20.</li>
-        </ul>
-    </div>
-</main>
+<section class="section-white" style="text-align: left; max-width: 800px; margin: 0 auto;">
+    <h2>Ma Méthode Holistique</h2>
+    <p>Ancien athlète de haut niveau, je mets mon expertise à votre service pour transformer votre quotidien sans frustration.</p>
+    <ul style="list-style: none; padding: 0; line-height: 2.2;">
+        <li>✅ <strong>Programme Sportif :</strong> Adapté à votre rythme.</li>
+        <li>✅ <strong>Nutrition 80/20 :</strong> Le plaisir avant tout.</li>
+        <li>✅ <strong>Mental & Respiration :</strong> Maîtrisez votre stress.</li>
+    </ul>
+</section>
 
 <footer class="site-footer">
     <img src="assets/equilimiam.jpg" alt="Logo Footer" class="footer-logo">
-    <p>&copy; 2026 Equilimiam</p>
+    <p>&copy; 2026 Equilimiam - <a href="mentions.html">Mentions Légales</a></p>
 </footer>
+
+<script>
+  window.limovaConfig = {
+    agentId: 'fbab6092-35b5-4ae7-aa22-fdbc48fb6c5b',
+    position: 'bottom-right',
+    primaryColor: '#FF8C69' 
+  };
+
+  function openLimovaChat() {
+    if (window.limova) {
+      window.limova.open();
+    } else {
+      // Si le script ne charge pas, on ouvre le lien dans un nouvel onglet par sécurité
+      window.open("https://limova-web-sltj.onrender.com/embededChatbot?connectionId=c958d86d-c5d2-4d63-b5cd-b28a6c012c72", "_blank");
+    }
+  }
+</script>
+<script src="https://widget.limova.app/v1/widget.js" async></script>
 
 </body>
 </html>
