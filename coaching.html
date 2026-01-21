@@ -57,16 +57,20 @@ sur-mesure.</h1>
   window.limovaConfig = {  
     agentId: 'fbab6092-35b5-4ae7-aa22-fdbc4bf6bc5b',  
     position: 'bottom-right',  
-    primaryColor: '#FF8C69'   
+    primaryColor: '#FF8C69'  
   };  
 &nbsp;  
   function openLimovaChat() {  
     if (window.Limova) {  
       window.Limova.open();  
+    } else if (window.limova) {  
+      window.limova.open();  
+    } else {  
+      console.error('Widget Limova non chargé');  
     }  
   }  
 </script>  
-<script src="https://widget.limova.app/v1/widget.js" async></script>  
+<script src="https://new.limova.ai/widget.js" async></script>   
 &nbsp;  
 </body>  
 </html>  
