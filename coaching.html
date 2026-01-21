@@ -28,47 +28,31 @@
     </div>
     <div class="hero-form-card">
         <h3>Bilan Offert</h3>
-        <p>Analysez vos besoins avec mon assistant nutritionnel avant notre échange.</p>
-        <button class="btn-main" onclick="openLimovaChat()" style="width:100%; cursor:pointer; border:none;">
+        <p>Analysez vos besoins avec mon assistant nutritionnel <strong>Limova</strong> avant notre premier échange.</p>
+        
+        <a href="https://limova.app/chat/fbab6092-35b5-4ae7-aa22-fdbc48fb6c5b" 
+           target="_blank" 
+           class="btn-main" 
+           style="width:100%; text-decoration: none; display: inline-block;">
             DÉMARRER MON BILAN
-        </button>
+        </a>
     </div>
 </header>
 
-<section class="section-white">
-    <div style="max-width:800px; margin: 0 auto; text-align: left;">
-        <h2>Ma Méthode Holistique</h2>
-        <p>Ancien athlète de haut niveau, je mets mon expertise à votre service pour transformer votre quotidien sans frustration.</p>
-        <ul style="list-style: none; padding: 0; line-height: 2.2;">
-            <li>✅ <strong>Programme Sportif :</strong> Adapté à votre rythme et vos articulations.</li>
-            <li>✅ <strong>Nutrition 80/20 :</strong> Le plaisir de manger tout en perdant du poids.</li>
-            <li>✅ <strong>Mental & Respiration :</strong> Maîtrisez votre stress pour une vitalité durable.</li>
-        </ul>
-    </div>
+<section class="section-white" style="text-align: left; max-width: 800px; margin: 0 auto;">
+    <h2>Ma Méthode Holistique</h2>
+    <p>Ancien athlète de haut niveau, je mets mon expertise à votre service pour transformer votre quotidien sans frustration.</p>
+    <ul style="list-style: none; padding: 0; line-height: 2.2;">
+        <li>✅ <strong>Programme Sportif :</strong> Adapté à votre rythme et vos articulations.</li>
+        <li>✅ <strong>Nutrition 80/20 :</strong> Le plaisir de manger tout en perdant du poids.</li>
+        <li>✅ <strong>Mental & Respiration :</strong> Maîtrisez votre stress pour une vitalité durable.</li>
+    </ul>
 </section>
 
 <footer class="site-footer">
     <img src="assets/equilimiam.jpg" alt="Logo Footer" class="footer-logo">
     <p>&copy; 2026 Equilimiam - <a href="mentions.html">Mentions Légales</a></p>
 </footer>
-
-<script>
-  window.limovaConfig = {
-    // C'est cet ID qui permet d'éviter la redirection vers /welcome
-    agentId: 'fbab6092-35b5-4ae7-aa22-fdbc48fb6c5b',
-    position: 'bottom-right',
-    primaryColor: '#FF8C69' 
-  };
-
-  function openLimovaChat() {
-    if (window.limova) {
-      window.limova.open();
-    } else {
-      console.log("Chargement de l'assistant...");
-    }
-  }
-</script>
-<script src="https://widget.limova.app/v1/widget.js" async></script>
 
 </body>
 </html>
