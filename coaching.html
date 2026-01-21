@@ -30,7 +30,7 @@ sur-mesure.</h1>
     <div class="hero-form-card">  
         <h3>Bilan Offert</h3>  
         <p>Analysez vos besoins avec mon IA Limova avant notre échange.</p>  
-        <button class="btn-main" onclick="openLimovaChat()" style="width:100%; cursor:pointer; border:none;">  
+        <button class="btn-main" id="bilanBtn" style="width:100%; cursor:pointer; border:none;">  
             DÉMARRER MON BILAN  
         </button>  
     </div>  
@@ -53,18 +53,12 @@ sur-mesure.</h1>
     <p>&copy; 2026 Equilimiam - <a href="mentions.html">Mentions Légales</a></p>  
 </footer>  
 &nbsp;  
-<!-- Widget Limova avec pré-chargement -->  
+<!-- Widget Limova - Code Officiel -->  
 <script>  
 document.addEventListener("DOMContentLoaded", () => {  
-  // Pré-charge l'URL du serveur Render pour le réveiller  
-  fetch("https://limova-web-sltj.onrender.com/embededChatbot?connectionId=c958d86d-c5d2-4d63-b5cd-b28a6c012c72", {  
-    method: 'HEAD',  
-    mode: 'no-cors'  
-  }).catch(() => console.log("Pré-chargement du serveur Render..."));  
-&nbsp;  
   const iframe = document.createElement("iframe");  
   iframe.src = "https://limova-web-sltj.onrender.com/embededChatbot?connectionId=c958d86d-c5d2-4d63-b5cd-b28a6c012c72";  
-  iframe.id = "limova-chatbot-iframe";  
+  iframe.id = "limova-chat-iframe";  
     
   const isMobile = window.innerWidth < 768;  
   const openWidth = isMobile ? "90%" : "420px";  
@@ -89,6 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
   document.body.appendChild(iframe);  
     
+  // Écoute les messages du chatbot  
   window.addEventListener("message", function(event) {  
     const data = event.data;  
     if (data && typeof data === "object" && "chatbotOpen" in data) {  
@@ -104,13 +99,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }  
   });  
     
-  // Fonction pour ouvrir le chat  
-  window.openLimovaChat = function() {  
-    iframe.contentWindow.postMessage({ action: "openChat" }, "*");  
+  // Fonction pour ouvrir le chat depuis le bouton  
+  const openChat = function() {  
+    // Envoie un message à l'iframe pour l'ouvrir  
+    iframe.contentWindow.postMessage({ chatbotOpen: true }, "*");  
+    // Force l'ouverture visuelle  
     iframe.style.width = openWidth;  
     iframe.style.height = openHeight;  
     iframe.style.borderRadius = "10px";  
   };  
+    
+  // Attache au bouton  
+  const btn = document.getElementById("bilanBtn");  
+  if (btn) {  
+    btn.addEventListener("click", openChat);  
+  }  
+    
+  // Rend la fonction accessible globalement  
+  window.openLimovaChat = openChat;  
 });  
 </script>  
 &nbsp;  
