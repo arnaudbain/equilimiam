@@ -3,78 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Conseils | Equilimiam</title>
+    <title>Blog | Equilimiam</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <nav class="navbar">
     <div class="logo-container">
-        <img src="assets/equilimiam.jpg" alt="Equilimiam Logo">
+        <img src="assets/equilimiam.jpg" alt="Logo Equilimiam">
     </div>
     <ul class="nav-links">
         <li><a href="index.html">Accueil</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="coaching.html">Coaching</a></li>
-        <li><a href="communaute.html">Espace 5€</a></li>
+        <li><a href="propos.html">À Propos</a></li>
         <li><a href="soins.html">Soins</a></li>
     </ul>
 </nav>
 
 <header class="hero-section">
-    <div class="hero-text" style="text-align: center;">
-        <h1>Conseils & Éducation</h1>
-        <p>Apprendre à écouter son corps pour mieux durer.</p>
+    <div class="hero-text">
+        <h1>Conseils & Équilibre</h1>
+        <p>Découvrez mes articles pour une vie pleine de vitalité.</p>
     </div>
 </header>
 
 <section class="section-white">
     <div class="grid-3">
-        <div class="step-card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
-            <div style="height: 180px; background: #f0f0f0; display: flex; align-items: center; justify-content: center; font-size: 3rem;">🫁</div>
-            <div style="padding: 20px;">
-                <h3 style="margin-top: 0;">Clé n°1 : La Respiration</h3>
-                <p>Découvrez comment la cohérence cardiaque peut abaisser votre stress en 5 minutes.</p>
-                <a href="article-1.html" class="btn-main" style="padding: 10px 20px; font-size: 0.9rem;">Lire la suite</a>
-            </div>
+        <div class="step-card">
+            <h3>La règle du 80/20</h3>
+            <p>Comment manger avec plaisir tout en atteignant ses objectifs de poids.</p>
+            <button class="btn-main" onclick="openLimovaChat()" style="padding: 10px 20px; font-size: 0.8rem;">En savoir plus avec l'IA</button>
         </div>
-
-        <div class="step-card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
-            <div style="height: 180px; background: #f0f0f0; display: flex; align-items: center; justify-content: center; font-size: 3rem;">🥗</div>
-            <div style="padding: 20px;">
-                <h3 style="margin-top: 0;">La Nutrition 80/20</h3>
-                <p>Ma méthode pour manger de tout sans jamais culpabiliser ni stocker.</p>
-                <a href="#" class="btn-main" style="padding: 10px 20px; font-size: 0.9rem; background: #ccc;">À venir</a>
-            </div>
+        <div class="step-card">
+            <h3>Mieux respirer</h3>
+            <p>L'impact de la cohérence cardiaque sur votre stress et votre sommeil.</p>
         </div>
     </div>
 </section>
-<footer class="site-footer">
-    <div class="footer-container">
-        <div class="footer-info">
-            <img src="assets/equilimiam.jpg" alt="Logo Equilimiam" class="footer-logo">
-            <p>Vivre avec plaisir pour bien vieillir.<br>Coaching holistique : Sport, Nutrition, Mental.</p>
-        </div>
-        
-        <div class="footer-links">
-            <h4>Navigation</h4>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="coaching.html">Coaching</a></li>
-                <li><a href="soins.html">Boutique Soins</a></li>
-            </ul>
-        </div>
 
-        <div class="footer-social">
-            <h4>Suivez-moi</h4>
-            <div class="social-icons">
-                <a href="#">FB</a> <a href="#">YT</a> <a href="#">IG</a> </div>
-        </div>
-    </div>
-    
-    <div class="footer-bottom">
-        <p>&copy; 2026 Equilimiam - Tous droits réservés | <a href="#">Mentions Légales</a></p>
-    </div>
-</footer>
+<script>
+  window.limovaConfig = { agentId: 'fbab6092-35b5-4ae7-aa22-fdbc48fb6c5b', position: 'bottom-right', primaryColor: '#FF8C69' };
+  function openLimovaChat() { if (window.limova) { window.limova.open(); } }
+</script>
+<script src="https://widget.limova.app/v1/widget.js" async></script>
+
 </body>
 </html>
