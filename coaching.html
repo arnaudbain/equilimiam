@@ -57,8 +57,8 @@ sur-mesure.</h1>
 <script>  
 document.addEventListener("DOMContentLoaded", () => {  
   const iframe = document.createElement("iframe");  
-  iframe.src = "https://limova-web-sltj.onrender.com/embededChatbot?connectionId=89448c0b-9472-4fca-875f-9bc379363546";  
-  iframe.id = "limova-chatbot-iframe"; // Ajout d'un ID pour le contrôler  
+  iframe.src = "https://limova-web-sltj.onrender.com/embededChatbot?connectionId=f05434c4-8faa-4591-b9c5-d2f050b1d91a";  
+  iframe.id = "limova-chatbot-iframe";  
     
   const isMobile = window.innerWidth < 768;  
   const openWidth = isMobile ? "90%" : "420px";  
@@ -83,7 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
     
   document.body.appendChild(iframe);  
     
-  // Écoute les messages du chatbot pour gérer l'ouverture/fermeture  
   window.addEventListener("message", function(event) {  
     const data = event.data;  
     if (data && typeof data === "object" && "chatbotOpen" in data) {  
@@ -99,12 +98,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }  
   });  
     
-  // Fonction globale pour ouvrir le chat depuis le bouton  
+  // Fonction pour ouvrir le chat depuis le bouton  
   window.openLimovaChat = function() {  
-    // Envoie un message à l'iframe pour l'ouvrir  
     iframe.contentWindow.postMessage({ action: "openChat" }, "*");  
-      
-    // Force l'ouverture visuellement (au cas où)  
     iframe.style.width = openWidth;  
     iframe.style.height = openHeight;  
     iframe.style.borderRadius = "10px";  
