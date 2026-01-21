@@ -5,6 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <title>Coaching | Equilimiam</title>  
     <link rel="stylesheet" href="style.css">  
+    <style>  
+        /* Style pour le chat en overlay */  
+        #limova-chat-overlay {  
+            display: none;  
+            position: fixed;  
+            top: 0;  
+            left: 0;  
+            width: 100%;  
+            height: 100%;  
+            background: rgba(0, 0, 0, 0.7);  
+            z-index: 9998;  
+            animation: fadeIn 0.3s ease;  
+        }  
+          
+        #limova-chat-container {  
+            display: none;  
+            position: fixed;  
+            top: 50%;  
+            left: 50%;  
+            transform: translate(-50%, -50%);  
+            width: 90%;  
+            max-width: 500px;  
+            height: 80vh;  
+            max-height: 700px;  
+            background: white;  
+            border-radius: 15px;  
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);  
+            z-index: 9999;  
+            overflow: hidden;  
+            animation: slideUp 0.3s ease;  
+        }  
+          
+        #limova-chat-header {  
+            background: #FF8C69;  
+            color: white;  
+            padding: 15px 20px;  
+            display: flex;  
+            justify-content: space-between;  
+            align-items: center;  
+        }  
+          
+        #limova-chat-close {  
+            background: none;  
+            border: none;  
+            color: white;  
+            font-size: 24px;  
+            cursor: pointer;  
+            padding: 0;  
+            width: 30px;  
+            height: 30px;  
+            display: flex;  
+            align-items: center;  
+            justify-content: center;  
+        }  
+          
+        #limova-chat-iframe {  
+            width: 100%;  
+            height: calc(100% - 60px);  
+            border: none;  
+        }  
+          
+        @keyframes fadeIn {  
+            from { opacity: 0; }  
+            to { opacity: 1; }  
+        }  
+          
+        @keyframes slideUp {  
+            from {   
+                opacity: 0;  
+                transform: translate(-50%, -40%);  
+            }  
+            to {   
+                opacity: 1;  
+                transform: translate(-50%, -50%);  
+            }  
+        }  
+          
+        @media (max-width: 768px) {  
+            #limova-chat-container {  
+                width: 100%;  
+                height: 100%;  
+                max-width: 100%;  
+                max-height: 100%;  
+                border-radius: 0;  
+            }  
+        }  
+    </style>  
 </head>  
 <body>  
 &nbsp;  
@@ -30,7 +117,7 @@ sur-mesure.</h1>
     <div class="hero-form-card">  
         <h3>Bilan Offert</h3>  
         <p>Analysez vos besoins avec mon IA Limova avant notre échange.</p>  
-        <button class="btn-main" id="startBilanBtn" style="width:100%; cursor:pointer; border:none;">  
+        <button class="btn-main" onclick="openLimovaChat()" style="width:100%; cursor:pointer; border:none;">  
             DÉMARRER MON BILAN  
         </button>  
     </div>  
@@ -53,78 +140,51 @@ sur-mesure.</h1>
     <p>&copy; 2026 Equilimiam - <a href="mentions.html">Mentions Légales</a></p>  
 </footer>  
 &nbsp;  
-<!-- Widget Limova -->  
+<!-- Chat Limova en Overlay -->  
+<div id="limova-chat-overlay" onclick="closeLimovaChat()"></div>  
+<div id="limova-chat-container">  
+    <div id="limova-chat-header">  
+        <h3 style="margin: 0; font-size: 18px;">💬 Assistant Equilimiam</h3>  
+        <button id="limova-chat-close" onclick="closeLimovaChat()">×</button>  
+    </div>  
+    <iframe   
+        id="limova-chat-iframe"  
+        src=""  
+        allow="microphone; camera"  
+    ></iframe>  
+</div>  
+&nbsp;  
 <script>  
-(function() {  
-  let chatIframe = null;  
-  let isOpen = false;  
-    
-  document.addEventListener("DOMContentLoaded", function() {  
-    // Crée l'iframe du chatbot  
-    const iframe = document.createElement("iframe");  
-    iframe.src = "https://limova-web-sltj.onrender.com/embededChatbot?connectionId=c958d86d-c5d2-4d63-b5cd-b28a6c012c72";  
-    iframe.id = "limova-chat-iframe";  
+function openLimovaChat() {  
+    const overlay = document.getElementById('limova-chat-overlay');  
+    const container = document.getElementById('limova-chat-container');  
+    const iframe = document.getElementById('limova-chat-iframe');  
       
-    const isMobile = window.innerWidth < 768;  
-    const openWidth = isMobile ? "90%" : "420px";  
-    const openHeight = isMobile ? "calc(100vh - 100px)" : "600px";  
-    const closedWidth = "70px";  
-    const closedHeight = "70px";  
-    const right = isMobile ? "5%" : "30px";  
-      
-    Object.assign(iframe.style, {  
-      position: "fixed",  
-      bottom: "20px",  
-      right: right,  
-      border: "none",  
-      zIndex: "9999",  
-      width: closedWidth,  
-      height: closedHeight,  
-      borderRadius: "35px",  
-      transition: "all 0.3s ease",  
-      boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",  
-      overflow: "hidden",  
-      opacity: "1"  
-    });  
-      
-    document.body.appendChild(iframe);  
-    chatIframe = iframe;  
-      
-    // Gestion ouverture/fermeture  
-    window.addEventListener("message", function(event) {  
-      const data = event.data;  
-      if (data && typeof data === "object" && "chatbotOpen" in data) {  
-        isOpen = data.chatbotOpen;  
-        if (data.chatbotOpen === true) {  
-          iframe.style.width = openWidth;  
-          iframe.style.height = openHeight;  
-          iframe.style.borderRadius = "10px";  
-        } else {  
-          iframe.style.width = closedWidth;  
-          iframe.style.height = closedHeight;  
-          iframe.style.borderRadius = "35px";  
-        }  
-      }  
-    });  
-      
-    // Fonction pour ouvrir le chat  
-    window.openLimovaChat = function() {  
-      if (chatIframe) {  
-        chatIframe.contentWindow.postMessage({ action: "openChat" }, "*");  
-        chatIframe.style.width = openWidth;  
-        chatIframe.style.height = openHeight;  
-        chatIframe.style.borderRadius = "10px";  
-        isOpen = true;  
-      }  
-    };  
-      
-    // Attache au bouton  
-    const btn = document.getElementById("startBilanBtn");  
-    if (btn) {  
-      btn.addEventListener("click", window.openLimovaChat);  
+    // Charge l'iframe seulement au moment de l'ouverture (optimisation)  
+    if (!iframe.src) {  
+        iframe.src = 'https://limova-web-sltj.onrender.com/embededChatbot?connectionId=c958d86d-c5d2-4d63-b5cd-b28a6c012c72';  
     }  
-  });  
-})();  
+      
+    overlay.style.display = 'block';  
+    container.style.display = 'block';  
+    document.body.style.overflow = 'hidden'; // Empêche le scroll de la page  
+}  
+&nbsp;  
+function closeLimovaChat() {  
+    const overlay = document.getElementById('limova-chat-overlay');  
+    const container = document.getElementById('limova-chat-container');  
+      
+    overlay.style.display = 'none';  
+    container.style.display = 'none';  
+    document.body.style.overflow = 'auto'; // Réactive le scroll  
+}  
+&nbsp;  
+// Ferme avec la touche Échap  
+document.addEventListener('keydown', function(event) {  
+    if (event.key === 'Escape') {  
+        closeLimovaChat();  
+    }  
+});  
 </script>  
 &nbsp;  
 </body>  
