@@ -3,34 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Merci | Equilimiam</title>
+    <title>Equilimiam | Accueil</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="logo-container"><img src="assets/equilimiam.jpg" style="height:60px; border-radius:50%;"></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="coaching.html">Coaching</a></li>
+            <li><a href="propos.html">À Propos</a></li>
+            <li><a href="soins.html">Soins</a></li>
+        </ul>
     </nav>
 
-    <section class="section-white" style="text-align:center; margin-top:80px; min-height: 60vh;">
-        <h1 style="color: #00b274;">C'est validé ! ✅</h1>
-        <p>Merci pour votre confiance. Votre guide "Nutrition Intelligente" est prêt.</p>
-        
-        <div style="margin: 40px 0;">
-            <a href="assets/guide-vitalite.pdf" download class="btn-emerald" style="background-color: #2c3e50; padding: 20px 40px; font-style: normal;">
-               📥 TÉLÉCHARGER MON GUIDE (PDF)
-            </a>
+    <header class="hero-section">
+        <div class="hero-text">
+            <h1>Retrouvez votre <br>Poids de Forme.</h1>
+            <p>Nutrition intelligente, mouvement et équilibre mental.</p>
         </div>
+        
+        <div class="hero-form-card">
+            <h3>🎁 Guide Offert</h3>
+            <p>Recevez vos 5 clés par email.</p>
+            
+            <form action="https://formspree.io/f/mvzoddqo" method="POST">
+                <input type="email" name="email" placeholder="Votre meilleur email" required 
+                       style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ddd; border-radius:5px;">
+                
+                <input type="hidden" name="_next" value="https://equilimiam.vercel.app/merci.html">
+                
+                <button type="submit" class="btn-emerald" style="width:100%; background-color: #2c3e50; font-style:normal; border-radius:5px;">
+                    RECEVOIR LE GUIDE
+                </button>
+            </form>
+            <hr style="margin:25px 0; border:0; border-top:1px solid #eee;">
+            <a href="https://limova-web-sltj.onrender.com/embededChatbot?connectionId=c958d86d-c5d2-4d63-b5cd-b28a6c012c72" target="_blank" class="btn-emerald" style="width:100%; display:block; text-align:center;">🚀 BILAN BIEN-ÊTRE IA</a>
+        </div>
+    </header>
 
-        <p style="margin-top: 50px;">Pendant que votre guide se télécharge, pourquoi ne pas faire votre bilan ?</p>
-        <a href="https://limova-web-sltj.onrender.com/embededChatbot?connectionId=c958d86d-c5d2-4d63-b5cd-b28a6c012c72" 
-           target="_blank" 
-           class="btn-emerald">
-           🚀 DÉMARRER MON BILAN IA
-        </a>
-    </section>
-
-    <footer class="site-footer">
-        <p>&copy; 2026 Equilimiam</p>
-    </footer>
+    <footer class="site-footer"><p>&copy; 2026 Equilimiam</p></footer>
 </body>
 </html>
