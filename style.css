@@ -115,3 +115,24 @@ body {
     .nav-links { flex-direction: column; gap: 10px; }
     .hero-text h1 { font-size: 2.2rem; }
 }
+/* Style spécifique pour le bouton IA Vert */
+.btn-emerald-ia {
+    display: inline-block;
+    width: 100%;
+    background-color: #00b274; /* Vert émeraude */
+    color: white;
+    text-decoration: none;
+    padding: 18px 0;
+    border-radius: 50px;
+    font-weight: 900;      /* Très gras */
+    font-style: italic;    /* Italique */
+    text-align: center;
+    font-size: 1.1rem;
+    transition: transform 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0, 178, 116, 0.3);
+}
+
+.btn-emerald-ia:hover {
+    transform: scale(1.03);
+    background-color: #009a63;
+}
