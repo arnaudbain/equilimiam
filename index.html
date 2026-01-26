@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coaching | Equilimiam</title>
+    <title>Equilimiam | Accueil</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -23,40 +23,85 @@
 
 <header class="hero-section">
     <div class="hero-text">
-        <h1>Un accompagnement <br>sur-mesure.</h1>
-        <p>Sport, Nutrition et Mental : je vous coache pour atteindre vos objectifs durablement.</p>
+        <h1>Retrouvez votre <br>Poids de Forme.</h1>
+        <p>Une méthode douce basée sur la nutrition, le mouvement et l'équilibre mental.</p>
     </div>
     
     <div class="hero-form-card">
-        <h3>Bilan Offert</h3>
-        <p>Analysez vos besoins avec mon assistant nutritionnel avant notre échange.</p>
-        
-        <div style="display: flex; justify-content: center; margin-top: 20px;">
-            <a href="https://limova-web-sltj.onrender.com/embededChatbot?connectionId=c958d86d-c5d2-4d63-b5cd-b28a6c012c72" 
-               target="_blank" 
-               style="background-color: #00b274; color: white; padding: 15px 35px; border-radius: 50px; font-weight: 900; text-decoration: none; font-style: italic; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: transform 0.3s; display: inline-block;"
-               onmouseover="this.style.transform='scale(1.05)'" 
-               onmouseout="this.style.transform='scale(1)'">
-               🚀 Lancer mon Bilan Bien-être
-            </a>
-        </div>
+        <h3>🎁 Guide Offert</h3>
+        <p>Recevez "Les 5 clés pour bien vieillir" (PDF).</p>
+        <form style="margin-bottom: 10px;">
+            <input type="email" placeholder="Votre email" required style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ddd; border-radius:5px;">
+            <button type="submit" class="btn-main" style="width:100%;">RECEVOIR LE GUIDE</button>
+        </form>
     </div>
 </header>
 
-<section class="section-white" style="text-align: left; max-width: 800px; margin: 0 auto; padding: 40px 20px;">
-    <h2>Ma Méthode Holistique</h2>
-    <p>Ancien athlète de haut niveau, je mets mon expertise à votre service pour transformer votre quotidien sans frustration.</p>
-    <ul style="list-style: none; padding: 0; line-height: 2.2;">
-        <li>✅ <strong>Programme Sportif :</strong> Adapté à votre rythme et vos articulations.</li>
-        <li>✅ <strong>Nutrition 80/20 :</strong> Le plaisir de manger tout en perdant du poids.</li>
-        <li>✅ <strong>Mental & Respiration :</strong> Maîtrisez votre stress pour une vitalité durable.</li>
-    </ul>
+<section class="section-white">
+    <div class="grid-3">
+        <div class="step-card">
+            <h3>🏃‍♂️ Mouvement</h3>
+            <p>Retrouvez une mobilité fluide pour un corps sans blocages.</p>
+        </div>
+        <div class="step-card">
+            <h3>🥗 Nutrition 80/20</h3>
+            <p>80% de discipline pour la santé, 20% de plaisir pour le moral.</p>
+        </div>
+        <div class="step-card">
+            <h3>🧘‍♂️ Mental</h3>
+            <p>Utilisez la respiration pour maîtriser le stress au quotidien.</p>
+        </div>
+    </div>
 </section>
 
 <footer class="site-footer">
     <img src="assets/equilimiam.jpg" alt="Logo Footer" class="footer-logo">
     <p>&copy; 2026 Equilimiam - <a href="mentions.html">Mentions Légales</a></p>
 </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const iframe = document.createElement("iframe");
+  iframe.src = "https://limova-web-sltj.onrender.com/embededChatbot?connectionId=c958d86d-c5d2-4d63-b5cd-b28a6c012c72";
+  const isMobile = window.innerWidth < 768;
+  const openWidth = isMobile ? "90%" : "420px";
+  const openHeight = isMobile ? "calc(100vh - 100px)" : "600px";
+  const closedWidth = "70px";
+  const closedHeight = "70px";
+  const right = isMobile ? "5%" : "30px";
+  
+  Object.assign(iframe.style, {
+    position: "fixed",
+    bottom: "20px",
+    right: right,
+    border: "none",
+    zIndex: "1000",
+    width: closedWidth,
+    height: closedHeight,
+    borderRadius: "35px",
+    transition: "width 0.3s ease, height 0.3s ease, border-radius 0.3s ease",
+    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
+    overflow: "hidden"
+  });
+  
+  document.body.appendChild(iframe);
+  
+  window.addEventListener("message", function(event) {
+    const data = event.data;
+    if (data && typeof data === "object" && "chatbotOpen" in data) {
+      if (data.chatbotOpen === true) {
+        iframe.style.width = openWidth;
+        iframe.style.height = openHeight;
+        iframe.style.borderRadius = "10px";
+      } else if (data.chatbotOpen === false) {
+        iframe.style.width = closedWidth;
+        iframe.style.height = closedHeight;
+        iframe.style.borderRadius = "35px";
+      }
+    }
+  });
+});
+</script>
 
 </body>
 </html>
